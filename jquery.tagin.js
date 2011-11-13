@@ -56,7 +56,7 @@
                 return $("<input/>").addClass("newTag").attr("type", "text").attr("placeholder", "add tag").val("");
             },
             tagInputBehavior: function (c, callbacks) {
-                return $("input.newTag").keypress(function (e) {
+                return $("input.newTag", c).keypress(function (e) {
                     var code = (e.keyCode ? e.keyCode : e.which);
                     if (code == 13 || code == ",".charCodeAt(0)) {
                         if ($(this).val().trim().length > 0) {
