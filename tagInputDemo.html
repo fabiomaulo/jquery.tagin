@@ -11,7 +11,6 @@ input.tags-input {
 } 
 
 div.whole-tags-input {
-    float: left;
     border: 1px solid #CCC;
     background: #FFF;
     padding: 1px;
@@ -55,22 +54,24 @@ div.activeTags div.tag span {
 
 div.activeTags div.tag a {
    display: block;
+   float:right;
    background-color: black;
    border-radius: 5px 5px 5px 5px;
    height:10px;
    width:10px;
    color:black;
-   margin-left:10px;
+   margin-left:5px;
    margin-top:3px;
    text-decoration:none;
 }
 
 div.activeTags div.tag a:focus, div.activeTags div.tag a:hover {
    background-color: red;
+    color:red;
 }
 
 div.whole-tags-input input.newTag {
-    width: 90px;
+    width: 100px;
     margin: 0px;
     font-family: Helvetica,Arial,sans-serif;
     font-size: 12px;
@@ -142,6 +143,7 @@ div.whole-tags-input input.newTag {
                 alert("removed:" + term);
             }
         });
+        $(".whole-tags-input").resizable({handles: "se"});
         $(".activeTags").sortable();
         $("input.newTag").autocomplete({
             source: availableTags
