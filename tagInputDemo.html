@@ -24,7 +24,6 @@ div.activeTags div.tag {
     border: 1px solid #94652D;
     -moz-border-radius: 2px;
     -webkit-border-radius: 2px;
-    display: block;
     float: left;
     padding: 1px;
     text-decoration: none;
@@ -49,19 +48,25 @@ div.activeTags div.tag {
                                       color-stop(0.78, rgb(255, 241, 168)),
                                       color-stop(0.83, rgb(250, 246, 197)));
 }
+div.activeTags div.tag span {
+    display: block;
+    float: left;
+}
 
 div.activeTags div.tag a {
-   background-color: white;
+   display: block;
+   background-color: black;
    border-radius: 5px 5px 5px 5px;
-   color: #999999;
-   font-size: 12px;
-   font-weight: bold;
-   text-decoration: none;
+   height:10px;
+   width:10px;
+   color:black;
+   margin-left:10px;
+   margin-top:3px;
+   text-decoration:none;
 }
 
 div.activeTags div.tag a:focus, div.activeTags div.tag a:hover {
-    font-weight: bold;
-     color: red;
+   background-color: red;
 }
 
 div.whole-tags-input input.newTag {

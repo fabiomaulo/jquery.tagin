@@ -31,7 +31,7 @@
                 // rt: the single-tag remove template
                 // term: the tag text
                 // return an element containing the tag remove
-                return $("<a/>").addClass("removeTag").attr("href", "#").text("x");
+                return $("<a/>").addClass("removeTag").attr("href", "#").text("");
             },
             getRemoveElements: function (c) {
                 // c: the input-elements container
