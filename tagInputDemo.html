@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/themes/redmond/jquery-ui.css" rel="stylesheet" type="text/css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js" type="text/javascript"></script>        
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js" type="text/javascript"></script>
+    <script src="jquery.tagin.js" type="text/javascript"></script>
+</head>
+
+<body>
+<input id="Text0" name="tagsA" type="text" value="a, b, c" class="tags-input"/>
+<input id="Text1" name="tagsB" type="text" value="" class="tags-input"/>
+
+<script>
+    $(function () {
+        var availableTags = [
+			"ActionScript",
+			"AppleScript",
+			"Asp",
+			"BASIC",
+			"C",
+			"C++",
+			"Clojure",
+			"COBOL",
+			"ColdFusion",
+			"Erlang",
+			"Fortran",
+			"Groovy",
+			"Haskell",
+			"Java",
+			"JavaScript",
+			"Lisp",
+			"Perl",
+			"PHP",
+			"Python",
+			"Ruby",
+			"Scala",
+			"Scheme"
+		];
+        $(".tags-input").asTagsInput({
+            onTagRemoved: function (c, term) {
+                alert("removed:" + term);
+            }
+        });
+        $(".activeTags").sortable();
+        $("input.newTag").autocomplete({
+            source: availableTags
+        });
+    });
+</script>
+</body>
+</html>
