@@ -82,8 +82,29 @@ div.whole-tags-input input.newTag {
 </head>
 
 <body>
-<input id="Text0" name="tagsA" type="text" value="a, b, c" class="tags-input"/>
-<input id="Text1" name="tagsB" type="text" value="" class="tags-input"/>
+<fieldset>
+	<div class="editor-label">
+		Tags A
+	</div>
+	<div class="editor-field">
+        <input id="Text0" name="tagsA" type="text" value="a, b, c" class="tags-input"/>
+	</div>
+
+   	<div class="editor-label">
+		Another
+	</div>
+	<div class="editor-field">
+        <input name="whatever" type="text" value=""/>
+	</div>
+
+   	<div class="editor-label">
+		Tags B
+	</div>
+	<div class="editor-field">
+        <input id="Text1" name="tagsB" type="text" value="" class="tags-input"/>
+	</div>
+
+</fieldset>
 
 <script>
     $(function () {
