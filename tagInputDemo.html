@@ -5,6 +5,79 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js" type="text/javascript"></script>        
     <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js" type="text/javascript"></script>
     <script src="jquery.tagin.js" type="text/javascript"></script>
+    <style>
+div.activeTags {
+    border: 1px solid #CCC;
+    background: #FFF;
+    padding: 1px;
+    width: 98%;
+    height: 100px;
+    overflow-y: auto;
+}
+
+div.activeTags div.tag {
+    border: 1px solid #94652D;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    display: block;
+    float: left;
+    padding: 1px;
+    text-decoration: none;
+    background: #fede01;
+    color: #94652D;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    background-image: linear-gradient(right top, rgb(250, 168, 5) 29%, rgb(255, 241, 168) 78%, rgb(250, 246, 197) 83%);
+    background-image: -o-linear-gradient(right top, rgb(250, 168, 5) 29%, rgb(255, 241, 168) 78%, rgb(250, 246, 197) 83%);
+    background-image: -moz-linear-gradient(right top, rgb(250, 168, 5) 29%, rgb(255, 241, 168) 78%, rgb(250, 246, 197) 83%);
+    background-image: -webkit-linear-gradient(right top, rgb(250, 168, 5) 29%, rgb(255, 241, 168) 78%, rgb(250, 246, 197) 83%);
+    background-image: -ms-linear-gradient(right top, rgb(250, 168, 5) 29%, rgb(255, 241, 168) 78%, rgb(250, 246, 197) 83%);
+
+    background-image: -webkit-gradient(
+                                      linear,
+                                      right top,
+                                      left bottom,
+                                      color-stop(0.29, rgb(250, 168, 5)),
+                                      color-stop(0.78, rgb(255, 241, 168)),
+                                      color-stop(0.83, rgb(250, 246, 197)));
+}
+
+div.activeTags div.tag a {
+   background-color: white;
+   border-radius: 5px 5px 5px 5px;
+   color: #999999;
+   font-size: 12px;
+   font-weight: bold;
+   text-decoration: none;
+}
+
+div.activeTags div.tag a:focus, div.activeTags div.tag a:hover {
+    font-weight: bold;
+     color: red;
+}
+
+div.whole-tags-input input.newTag {
+    width: 90px;
+    margin: 0px;
+    font-family: Helvetica,Arial,sans-serif;
+    font-size: 12px;
+    border: 1px solid transparent;
+    padding: 5px;
+    background: transparent;
+    color: #000;
+    outline: 0px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+}
+
+div.whole-tags-input div {
+    display: block;
+    float: left;
+} 
+    </style>
 </head>
 
 <body>
@@ -42,7 +115,7 @@
                 alert("removed:" + term);
             }
         });
-        $(".activeTags").sortable();
+        //$(".activeTags").sortable();
         $("input.newTag").autocomplete({
             source: availableTags
         });
