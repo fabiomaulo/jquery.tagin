@@ -59,8 +59,9 @@
                 return $("input.newTag", c).keypress(function (e) {
                     var code = (e.keyCode ? e.keyCode : e.which);
                     if (code == 13 || code == ",".charCodeAt(0)) {
-                        if ($(this).val().trim().length > 0) {
-                            callbacks.fire(c, $(this));
+                        var term = $(this).val().trim();
+                        if (term.length > 0) {
+                            callbacks.fire(c, term);
                         }
                         $(this).val("");
                         return false;
@@ -99,7 +100,7 @@
             onTagRemoved: function (c, term) {
                 // callback
             },
-            onTagAdded: function (c, newTagInputElement) {
+            onTagAdded: function (c, term) {
                 // callback
             }
         };
@@ -127,15 +128,15 @@
             options.tagRemoveBehavior(container, options.getRemoveElements(container), removeCallbacks);
 
             var newTagCallbacks = $.Callbacks();
-            newTagCallbacks.add(function (c, newTagInputElement) {
+            newTagCallbacks.add(function (c, term) {
                 // insert the new tag element with its callbacks
-                var newTerm = newTagInputElement.val();
+                var newTerm = term;
                 var newsTagElement = options.singleTagShowTemplate(c, options.singleTagRemoveTemplate, newTerm);
                 activeTagsWrapper.append(newsTagElement);
                 var removeElement = options.getRemoveElements(newsTagElement);
                 options.tagRemoveBehavior(c, removeElement, removeCallbacks);
             });
-            newTagCallbacks.add(function (c, newTagInputElement) {
+            newTagCallbacks.add(function (c, term) {
                 // reset the declaredInput value
                 var terms = options.getActiveTags(container);
                 var newValue = options.createInputValueString(terms);
