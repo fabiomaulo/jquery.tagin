@@ -1,3 +1,13 @@
+/*
+
+jQuery Tagin Plugin 1.0.0
+	
+Licensed under the MIT license:
+http://www.opensource.org/licenses/mit-license.php
+
+fabiomaulo@gmail.com
+
+*/
 (function ($) {
     $.fn.asTagsInput = function (options) {
         var defaults = {
