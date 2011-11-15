@@ -78,7 +78,7 @@ fabiomaulo@gmail.com
                     }
                     return true;
                 })
-                .keydown(function (e) {
+                .keyup(function (e) {
                     var term = $(this).val();
                     if (e.keyCode == 8 && "" == term) {
                         var lastActiveTag = $("a.removeTag:last", c);
