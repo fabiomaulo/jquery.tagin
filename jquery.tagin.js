@@ -90,7 +90,7 @@ fabiomaulo@gmail.com
                 // iv: the original input value
                 // return an array of each single word
                 var terms = [];
-                $.each(iv.split(','), function (i, v) {
+                $.each(iv.split(options.delimiter), function (i, v) {
                     var trimmedValue = v.trim();
                     if (trimmedValue.length > 0) {
                         terms.push(v.trim());
