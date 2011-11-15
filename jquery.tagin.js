@@ -40,7 +40,7 @@ fabiomaulo@gmail.com
                 // rt: the single-tag remove template
                 // term: the tag text
                 // return an element containing the tag remove
-                return $("<a/>").addClass("removeTag").attr("href", "#").text("");
+                return $("<a/>").addClass("removeTag").attr("href", "#").text("x");
             },
             getRemoveElements: function (c) {
                 // c: the input-elements container
@@ -62,7 +62,7 @@ fabiomaulo@gmail.com
             singleTagInputTemplate: function () {
                 // crete input-element to add a new tag
                 // return the input-element
-                return $("<input/>").addClass("newTag").attr("type", "text").attr("placeholder", "add tag").val("");
+                return $("<input/>").addClass("newTag").attr("type", "text").attr("placeholder", options.newTagPlaceHolder).val("");
             },
             tagInputBehavior: function (c, callbacks) {
                 return $("input.newTag", c)
@@ -120,7 +120,8 @@ fabiomaulo@gmail.com
             onTagAdded: function (c, term) {
                 // callback
             },
-            delimiter: ","
+            delimiter: ",",
+            newTagPlaceHolder: "add tag",
         };
 
         var options = $.extend(defaults, options);
