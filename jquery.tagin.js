@@ -1,6 +1,6 @@
 /*
 
-jQuery Tagin Plugin 1.0.0
+jQuery Tagin Plugin 1.0.1
 	
 Licensed under the MIT license:
 http://www.opensource.org/licenses/mit-license.php
@@ -12,12 +12,11 @@ fabiomaulo@gmail.com
     $.fn.asTagsInput = function (options) {
         var defaults = {
             wholeInputTemplate: function (i) {
-                // surround the input with a div to group all items of the tag-input
+                // creat the element to group all items of the tag-input
                 // i: the input element
                 // return the input-elements container
                 var inputContainer = $("<div/>").addClass("whole-tags-input");
-                inputContainer.insertBefore(i);
-                i.appendTo(inputContainer);
+                inputContainer.insertAfter(i);
                 return inputContainer;
             },
             activeTagsWrapperTemplate: function (c) {
