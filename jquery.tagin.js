@@ -68,7 +68,7 @@ fabiomaulo@gmail.com
                 return $("input.newTag", c)
                 .keypress(function (e) {
                     var code = (e.keyCode ? e.keyCode : e.which);
-                    if (code == 13 || code == ",".charCodeAt(0)) {
+                    if (code == 13 || code == options.delimiter.charCodeAt(0)) {
                         var term = $(this).val().trim();
                         if (term.length > 0) {
                             callbacks.fire(c, term);
@@ -112,14 +112,15 @@ fabiomaulo@gmail.com
             createInputValueString: function (words) {
                 // words: array of words
                 // return the string representing the value of the original input
-                return words.join(", ");
+                return words.join(options.delimiter);
             },
             onTagRemoved: function (c, term) {
                 // callback
             },
             onTagAdded: function (c, term) {
                 // callback
-            }
+            },
+            delimiter: ","
         };
 
         var options = $.extend(defaults, options);
