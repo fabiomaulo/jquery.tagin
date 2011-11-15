@@ -121,7 +121,7 @@ fabiomaulo@gmail.com
                 // callback
             },
             delimiter: ",",
-            newTagPlaceHolder: "add tag",
+            newTagPlaceHolder: "add tag"
         };
 
         var options = $.extend(defaults, options);
